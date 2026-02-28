@@ -8,32 +8,29 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="好友隊計分">
+  <meta name="mobile-web-app-capable" content="yes">
   
   <link rel="apple-touch-icon" href="icon.png">
   <link rel="manifest" href="manifest.json">
   
   <style>
-    body { 
-      background-color: #000; color: #4CAF50; 
-      display: flex; justify-content: center; align-items: center; 
-      height: 100vh; margin: 0; font-family: sans-serif; font-weight: bold;
+    body, html {
+      margin: 0; padding: 0; height: 100%; overflow: hidden; background-color: #000;
+    }
+    /* iframe 就是畫中畫，把 Google 的網頁無縫塞滿整個手機螢幕 */
+    iframe {
+      width: 100%; height: 100%; border: none; display: block;
     }
   </style>
 </head>
 <body>
-  <div>⛳️ 系統載入中...</div>
+
+  <iframe src="https://script.google.com/macros/s/你的專屬網址/exec"></iframe>
 
   <script>
-    // 註冊 Service Worker (啟動 App 安裝機制的必備條件)
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('sw.js');
     }
-    
-    // 👇👇👇 請將下面引號內的網址，換成你的 Google Apps Script 網址 👇👇👇
-    const gasUrl = "https://script.google.com/macros/s/AKfycbyfcNOkgJs_F5J0gBB7H1GBDkUgWMkhc4YGtiPJP-i09zURj4AC_ZhuxafZ3l2ITmti/exec";
-    
-    // 自動跳轉
-    window.location.replace(gasUrl);
   </script>
 </body>
 </html>
