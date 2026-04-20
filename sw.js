@@ -1,7 +1,7 @@
 // 專屬這套系統的快取名稱 (千萬不要跟另外兩套重複)
 const CACHE_PREFIX = 'taoyuan-cache-'; 
 // 以後如果改了外殼 (index.html 等)，只要把 v2 改成 v3, v4 即可
-const CACHE_VERSION = 'v2'; 
+const CACHE_VERSION = 'v3'; 
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
 
 const urlsToCache = [
